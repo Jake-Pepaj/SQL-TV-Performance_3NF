@@ -36,12 +36,7 @@ est_cost VARCHAR(10),
 FOREIGN KEY (show_id) REFERENCES Shows(show_id),
 FOREIGN KEY (platform_id) REFERENCES Platforms(platform_id)
 );
-ALTER TABLE Performance
-ADD CONSTRAINT chk_market_rating CHECK (market_rating >= 0 AND market_rating <= 10);
-ALTER TABLE Seasons
-ADD CONSTRAINT chk_episode_count CHECK (episode_count >= 1);
-ALTER TABLE Performance
-ADD CONSTRAINT chk_minutes_watched CHECK (minutes_watched >= 0);
+
 INSERT INTO Platforms (platform_id, name, monthly_price) VALUES
 (1, 'Netflix', '$15.49'),
 (2, 'Crunchyroll', '$7.99'),
